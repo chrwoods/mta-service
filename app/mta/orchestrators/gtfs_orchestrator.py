@@ -27,8 +27,10 @@ def get_southbound_jz_stop_times() -> dict:
                 stop_time = {
                     'stop_id': stop.id,
                     'stop_name': stop.name,
-                    'arrival_time': arrival_time,
-                    'departure_time': departure_time,
+                    'arrival_time': arrival_time.timestamp(),
+                    'arrival_time_readable': arrival_time.strftime("%Y-%m-%d %I:%M:%S %p"),
+                    'departure_time': departure_time.timestamp(),
+                    'departure_time_readable': departure_time.strftime("%Y-%m-%d %I:%M:%S %p"),
                 }
                 found_stop_times[stop.id].append(stop_time)
 
