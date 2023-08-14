@@ -9,7 +9,7 @@ def create_app(config_class=Config) -> Flask:
 
     # blueprints
     from app.mta import mta
-    app.register_blueprint(mta)
+    app.register_blueprint(mta, url_prefix='/mta')
 
     @app.route('/')
     def test():
